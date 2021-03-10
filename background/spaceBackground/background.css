@@ -1,0 +1,85 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+section {
+  width: 100%;
+  height: 100vh;
+  background-color: #2d3436;
+  background-image: linear-gradient(315deg, #2d3436 0%, #000000 74%);
+}
+
+.rocket {
+  pointer-events: none;
+  position: absolute;
+  left: 15%;
+  top: 60%;
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  font-size: 8em;
+  line-height: 200px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 55px rgba(255, 255, 255, 0.1);
+  animation: animate 5s linear infinite;
+}
+.rocket::before {
+  content: "";
+  position: absolute;
+  width: 30%;
+  top: 90px;
+  left: 20px;
+  height: 60%;
+  background: #ff0;
+  border-radius: 50%;
+  filter: blur(15px);
+  transform: rotate(45deg);
+  z-index: -1;
+  animation: fuel 5s linear infinite;
+}
+@keyframes animate {
+  0% {
+    transform: translate(-20px, -20px);
+  }
+  25% {
+    transform: translate(20px, 0);
+  }
+
+  50% {
+    transform: translate(-20px, 20px);
+  }
+
+  75% {
+    transform: translate(20px, 0px);
+  }
+  100% {
+    transform: translate(-20px, -20px);
+  }
+}
+@keyframes fuel {
+  0% {
+    background: #00abff;
+    transform: rotate(45deg) scaleY(1);
+  }
+  25% {
+    background: #ffff90;
+  }
+
+  50% {
+    background: rgb(216, 53, 4);
+    transform: rotate(45deg) scaleY(2);
+  }
+
+  75% {
+    background: #df7008;
+  }
+
+  100% {
+    background: #ff0;
+    transform: rotate(45deg) scaleY(1);
+  }
+}
+
+.rocket .fa {
+  color: #fff;
+}

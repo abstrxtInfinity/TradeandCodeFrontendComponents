@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway:400,500,300"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="./login.css" />
+  </head>
+  <body>
+    <div id="mainButton">
+      <div class="btn-text" onclick="openForm()">Sign In</div>
+      <div class="modal">
+        <div class="close-button" onclick="closeForm()">x</div>
+        <div class="form-title">Login</div>
+        <div class="input-group">
+          <input type="text" id="name" onblur="checkInput(this)" />
+          <label for="name">Username</label>
+        </div>
+        <div class="input-group">
+          <input type="password" id="password" onblur="checkInput(this)" />
+          <label for="password">Password</label>
+        </div>
+        <div class="form-button" onclick="closeForm()">Submit</div>
+      </div>
+    </div>
+    <script src="./login.js"></script>
+  </body>
+</html>

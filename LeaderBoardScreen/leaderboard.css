@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+*{
+    list-style: none;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #fcdc00;
+    color: white;
+    overflow-x: hidden;
+}
+h1{
+    width: 100%;
+    margin-bottom: 10px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+hr{
+    border: 0;
+    border-top: 1px solid black;
+}
+#hr2{
+   margin-left: 5%;
+    width: 90%;
+    border-top: 1px solid white;
+
+}
+
+.wrapper{
+    width: 100%;
+    height: 100%;
+    padding: 50px;
+}
+
+.lboard_section{
+    margin: 10px 20px;
+    position: relative;
+}
+
+.lboard_section ul{
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+
+}
+.lboard_section ul li {
+    font-size: 1.7em;
+    font-weight: 600;    
+}
+.lboard_wrap{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding-right: 100px;
+}
+.lboard_wrap .lboard_item{
+    margin-top: 60px;
+    padding:20px;
+    min-height: 100vh;
+    background: black;
+    border-top-left-radius:10px ;
+    border-top-right-radius:10px ;
+}
+
+.lboard_wrap .lboard_item .lboard_member{
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid  #ffe3;
+}
+.lboard_wrap .lboard_item .lboard_member:first-child{
+    padding-top: 0;
+}
+.lboard_wrap .lboard_item .lboard_member:last-child{
+    border-bottom: 0;
+    padding-bottom: 0;
+}
+.lboard_wrap .lboard_member .image {
+   
+    width: 50px;
+}
+
+.lboard_wrap .lboard_member .image img {
+    display: block;
+    width: 100%;
+}
+
+.lboard_wrap .lboard_member .name_bar{
+    margin: 0 20px;
+    width:  80%;
+}
+.lboard_wrap .lboard_member .name_bar p {
+    font-size: 1.4em;
+}
+.lboard_wrap .lboard_member .name_bar p span{
+    margin-right: 5px;
+    color: orange;
+
+}
+.lboard_wrap .lboard_member .points {
+    width: 10%;
+    font-size: 1.3em;
+    font-weight: 600;
+}
+
+.lboard_wrap .lboard_item .bar_wrap{
+    height: 5px;
+    width: 90%;
+    background: #3b3b3b;
+    border-radius: 5px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    position: relative;
+    overflow:hidden ;
+}
+.lboard_wrap .lboard_item .bar_wrap .inner_bar{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 5px;
+    background: orange;
+    border-radius: 5px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
