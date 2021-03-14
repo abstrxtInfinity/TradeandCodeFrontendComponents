@@ -325,6 +325,14 @@ main {
   body {
     overflow-y: visible;
   }
+  section main {
+    margin: 0;
+    padding: 0;
+  }
+  section main .question {
+    font-size: 1.25em;
+    margin-top: 40px;
+  }
   section main .bar {
     display: flex;
     flex-direction: column;
