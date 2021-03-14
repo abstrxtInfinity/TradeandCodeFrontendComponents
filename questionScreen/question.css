@@ -213,13 +213,15 @@ section {
 main {
   position: relative;
   display: flex;
-  min-height: 20%;
   flex-direction: column;
   width: 100%;
+  max-height: 10%;
   padding: 80px 60px;
   z-index: 0;
 }
-
+::-webkit-scrollbar {
+  width: 0;
+}
 .question {
   width: 80%;
   margin-top: 40px;
@@ -227,6 +229,7 @@ main {
   padding: 30px;
   font-size: 1.5em;
   color: #fff;
+  overflow-y: scroll;
   border: 1px solid #fff;
   border-radius: 10px;
 }
@@ -328,8 +331,12 @@ main {
   section main {
     margin: 0;
     padding: 0;
+    max-height: 700px;
+    overflow-y: scroll;
   }
   section main .question {
+    padding-top: 10px;
+    overflow-y: scroll;
     font-size: 1.25em;
     margin-top: 40px;
   }
