@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.3/animate.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="./home.css" />
+    <link rel="stylesheet" href="./downArrow.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="./timelineCard.css" />
+    <link rel="stylesheet" href="./footer.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2><span>Welcome</span><br /></h2>
+      <a href="#about"
+        ><div class="arrow-container animated fadeInDown">
+          <div class="arrow-2">
+            <i class="fa fa-angle-down"></i>
+          </div>
+          <div class="arrow-1 animated hinge infinite zoomIn"></div></div
+      ></a>
+    </div>
+    <section id="about">
+      <div class="about">
+        <h2>abstract</h2>
+        <p>
+          This event brings an interesting and fun amalgamation of economics and
+          coding. It is an event based on real time trading and problem solving
+          while managing your balance. Each team will be provided with a certain
+          amount of virtual currency, and they will have to buy various
+          components and libraries required to write a code (eg: loops, if-else
+          statements, string library, classes etc.) The sale of components and
+          libraries will be followed by a few rounds of coding questions.Prices
+          of which will fluctuate according to demand and supply. Each team can
+          only use the components available in their respective inventories. If
+          the team does not have the required component, they can either trade
+          with the other teams by negotiating with them on a common platform, or
+          can buy from the trading portal. The team at the end with the maximum
+          currency will be declared as the winner.<br /><br />
+        </p>
+        <a href="#rules"><h3>View Rules</h3></a>
+      </div>
+    </section>
+    <br>
+    <div class="row">
+  <div>
+    <svg id="" preserveAspectRatio="xMidYMax meet" class="svg-separator sep12" viewBox="0 0 1600 200" style="display: block;" data-height="200">
+<polygon class="" style="fill: rgba(13, 164, 175, 0.7);" points="-4,24 800,198 1604,24 1604,204 -4,204 "></polygon> 
+</svg>
+    <section id="rules">
+      <div class="rules">
+        <h2>Rules</h2>
+        
+            <ol>
+                <li>Each team will be provided with a certain amount of virtual currency, and they will have to buy various components and libraries required to write a code (eg: loops, if-else statements, string library, classes etc.).</li>
+                <li>The sale of components and libraries will be followed by a few rounds of coding questions.</li>
+                <li>Prices of the components will fluctuate according to demand and supply.</li>
+                <li>Each team can only use the components available in their respective inventories.</li>
+                <li>If the team does not have the required component, they can either trade with other teams by negotiating with them on a common platform and trade through a trading portal or can buy from the market.</li>
+            </ol>
+        
+      </div>
+    </section>
+    <div class="svg">
+      <svg
+        id="svg"
+        preserveAspectRatio="xMidYMax meet"
+        class="svg-separator sep2"
+        viewBox="0 0 1600 200"
+        style="display: block"
+        data-height="200"
+      >
+        <polygon
+          class=""
+          style="fill: black"
+          points="-4,0 1604,198 1604,204 -4,204 	"
+        ></polygon>
+      </svg>
+    </div>
+    <section id="timeline">
+      <div class="timeline">
+        <h2>Contest TImeline</h2>
+        <div class="content">
+          <div class="card">
+            <div class="icon"><i class="material-icons md-36">face</i></div>
+            <p class="title">Event Details</p>
+            <p>
+                <ul class="text">
+                    <li>Event Date: 10/04/2021</li>
+                    <li>Event Duration: 3-4 hours</li>
+                </ul>
+            </p>
+          </div>
+          <div class="card">
+            <div class="icon">
+              <i class="material-icons md-36">alternate_email</i>
+            </div>
+            <p class="title">Registrations</p>
+            <p >
+                <ul class="text">
+                    <li>Start Date: 3/04/2021</li>
+                    <li>End Date: 5/04/2021</li>
+                </ul>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="contacts">
+        <h3>Contact Details-</h3>
+
+        <ul>
+          <li>Anant Verma - +91XXXXXXXXXX</li>
+          <li>Mrigank Anand - +91XXXXXXXXXX</li>
+        </ul>
+      </div>
+      <div class="social">
+        <ul>
+          <li>
+            <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+          </li>
+          <li>
+            <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+          </li>
+          <li>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+    <script src="anime.min.js"></script>
+    <script>
+      const container = document.querySelector(".container");
+      for (var i = 0; i <= 100; i++) {
+        const blocks = document.createElement("div");
+        blocks.classList.add("block");
+        container.appendChild(blocks);
+      }
+
+      function animateBlocks() {
+        anime({
+          targets: ".block",
+          translateX: function () {
+            return anime.random(-900, 900);
+          },
+          translateY: function () {
+            return anime.random(-500, 500);
+          },
+          scale: function () {
+            return anime.random(1, 5);
+          },
+
+          easing: "linear",
+          duration: 3000,
+          delay: anime.stagger(10),
+          complete: animateBlocks,
+        });
+      }
+      animateBlocks();
+    </script>
+  </body>
+</html>

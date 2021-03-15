@@ -1,0 +1,120 @@
+footer {
+  height: 10vh;
+  background-color: rgba(13, 164, 175, 0.7);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.contacts {
+  width: 50%;
+  color: #fff;
+  padding: 10px 20px;
+}
+.contacts h3 {
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.contacts ul {
+  list-style: none;
+  margin-top: 10px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-align: right;
+}
+.social {
+  margin: 0;
+  padding: 0;
+  width: 40%;
+  height: 10vh;
+  text-align: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.social ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 10px 10px;
+}
+
+.social ul a {
+  color: white;
+}
+
+.social ul li {
+  position: relative;
+  display: block;
+  color: #fff;
+  font-size: 20px;
+  height: 60px;
+  width: 60px;
+  background: #000;
+  line-height: 60px;
+  border-radius: 50%;
+  margin: 0 15px;
+  cursor: pointer;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.social ul li::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  z-index: -1;
+  -webkit-transform: scale(0.9);
+  transform: scale(0.9);
+}
+
+.social ul li:hover::before {
+  -webkit-filter: blur(3px);
+  filter: blur(3px);
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+.social ul li:nth-child(1):hover {
+  -webkit-box-shadow: 0 0 15px #4267b2;
+  box-shadow: 0 0 15px #4267b2;
+  text-shadow: 0 0 15px #4267b2;
+}
+
+.social ul li:nth-child(1):hover a {
+  color: #456cba;
+}
+
+.social ul li:nth-child(2):hover {
+  -webkit-box-shadow: 0 0 15px #f21d1da9;
+  box-shadow: 0 0 15px #f21d1da9;
+  text-shadow: 0 0 15px #f21d1da9;
+}
+
+.social ul li:nth-child(2):hover a {
+  color: red;
+}
+
+.social ul li:nth-child(3):hover {
+  -webkit-box-shadow: 0 0 15px #e1306c;
+  box-shadow: 0 0 15px #e1306c;
+  text-shadow: 0 0 15px #e1306c;
+}
+
+.social ul li:nth-child(3):hover a {
+  color: #e23670;
+}
