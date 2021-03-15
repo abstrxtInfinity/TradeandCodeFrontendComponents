@@ -117,3 +117,21 @@ footer {
 .social ul li:nth-child(3):hover a {
   color: #e23670;
 }
+
+@media screen and (max-width: 1024px) {
+  footer {
+    font-size: 14px;
+  }
+  .social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .social ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+  }
+}
