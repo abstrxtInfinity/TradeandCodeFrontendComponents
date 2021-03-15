@@ -135,3 +135,18 @@ footer {
     width: 40px;
   }
 }
+
+@media screen and (max-width: 768px) {
+  footer {
+    margin-top: 50px;
+    font-size: 14px;
+    height: 90px;
+  }
+  .contacts {
+    width: 100%;
+    text-align: center;
+  }
+  .social {
+    display: none;
+  }
+}
