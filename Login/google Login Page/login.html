@@ -9,37 +9,18 @@
   </head>
   <body>
     <div class="container">
+      <!-- Create Background Pattern -->
+      <canvas id="animation-pattern"></canvas>
+
+      <!-- Create Background Dots -->
+      <canvas id="animation-dots"></canvas>
       <div class="btn">
         <img
           src="https://img.icons8.com/color/126/000000/google-logo.png"
         /><span><a href="#">Google-SignIn</a></span>
       </div>
     </div>
-    <div class="waveWrapper waveAnimation">
-      <div class="waveWrapperInner bgTop">
-        <div
-          class="wave waveTop"
-          style="
-            background-image: url('http://front-end-noobs.com/jecko/img/wave-top.png');
-          "
-        ></div>
-      </div>
-      <div class="waveWrapperInner bgMiddle">
-        <div
-          class="wave waveMiddle"
-          style="
-            background-image: url('http://front-end-noobs.com/jecko/img/wave-mid.png');
-          "
-        ></div>
-      </div>
-      <div class="waveWrapperInner bgBottom">
-        <div
-          class="wave waveBottom"
-          style="
-            background-image: url('http://front-end-noobs.com/jecko/img/wave-bot.png');
-          "
-        ></div>
-      </div>
-    </div>
+
+    <script src="./background.js"></script>
   </body>
 </html>
