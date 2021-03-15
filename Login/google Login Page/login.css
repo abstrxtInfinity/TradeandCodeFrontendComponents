@@ -15,58 +15,25 @@ body {
   justify-content: center;
   position: relative;
   display: flex;
+  flex-direction: column;
   width: 100%;
-  overflow-x: hidden;
-  overflow-y: hidden;
-  background: #040427;
-  align-items: center;
+  background: black;
+
+  margin: 0;
+}
+
+canvas {
+  width: 100%;
+}
+.container {
+  display: flex;
   justify-content: center;
-}
-
-.wave {
+  align-items: center;
   position: absolute;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #132252;
-}
-
-.wave span {
-  position: absolute;
-  width: 325vh;
-  height: 325vh;
   top: 0;
-  left: 50%;
-  background: #040427;
-  transform: translate(-50%, -75%);
-}
-
-.wave span:nth-child(1) {
-  animation: animate 5s linear infinite;
-  border-radius: 50%;
-  background: rgba(20, 20, 20, 1);
-}
-
-.wave span:nth-child(2) {
-  animation: animate 10s linear infinite;
-  border-radius: 43%;
-  background: rgba(20, 20, 20, 0.5);
-}
-
-.wave span:nth-child(3) {
-  animation: animate 15s linear infinite;
-  border-radius: 45%;
-  background: rgba(20, 20, 20, 0.5);
-}
-
-@keyframes animate {
-  0% {
-    transform: translate(-50%, -75%) rotate(0deg);
-  }
-
-  100% {
-    transform: translate(-50%, -75%) rotate(360deg);
-  }
+  left: 0;
+  width: 100vw;
+  height: 100vh;
 }
 
 .btn {
@@ -78,9 +45,9 @@ body {
   font-weight: 200;
   width: 300px;
   height: 60px;
-  align-items: center;
   justify-content: center;
   overflow: hidden;
+  align-items: center;
   position: relative;
   border-radius: 200px;
   letter-spacing: 2px;
@@ -89,6 +56,8 @@ body {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12), 0 5px 15px rgba(0, 0, 0, 0.24);
   -webkit-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
+  z-index: 99;
+  background-color: black;
 }
 .btn:hover {
   cursor: pointer;
