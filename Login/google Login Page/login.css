@@ -51,6 +51,7 @@ canvas {
   align-items: center;
   position: relative;
   border-radius: 200px;
+  border: 1px solid #fff;
   letter-spacing: 2px;
   -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
     0 1px 2px rgba(0, 0, 0, 0.24);
@@ -62,6 +63,7 @@ canvas {
 }
 .btn:hover {
   cursor: pointer;
+  border: 0;
 }
 .btn span a {
   z-index: 2;
