@@ -1,0 +1,517 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+* {
+  list-style: none;
+  font-family: "Monospace", sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+section {
+  width: 100%;
+  height: 100vh;
+  background: #000;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 100px;
+}
+
+section header h1 {
+  font-size: 2em;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+section .container {
+  text-align: center;
+  margin-top: 60px;
+  border-radius: 10px;
+  padding: 20px;
+  width: 60%;
+  height: 60%;
+}
+
+section .container h2 {
+  font-size: 1.6em;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+section .container h3 {
+  margin-top: 50px;
+  font-size: 1.2em;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+section .container p {
+  margin: 20px 10px;
+  font-size: 1.1em;
+  letter-spacing: 0.2em;
+  font-weight: 400;
+  color: #8b8b8b;
+}
+
+section .container .row {
+  padding: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section .container .row a {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #03e9f4;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  margin-top: 40px;
+  letter-spacing: 4px;
+}
+
+section .container .row #btn2 {
+  color: #f40303e8;
+}
+
+section .container .row #btn1:hover {
+  background: #03e8f4d0;
+  color: #fff;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 5px #03e8f4d3, 0 0 25px #03e8f4d3, 0 0 50px #03e8f4d3, 0 0 100px #03e8f4d3;
+          box-shadow: 0 0 5px #03e8f4d3, 0 0 25px #03e8f4d3, 0 0 50px #03e8f4d3, 0 0 100px #03e8f4d3;
+}
+
+section .container .row #btn2:hover {
+  background: #f40303d0;
+  color: #fff;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 5px #f40303d3, 0 0 25px #f40303d3, 0 0 50px #f40303d3, 0 0 100px #f40303d3;
+          box-shadow: 0 0 5px #f40303d3, 0 0 25px #f40303d3, 0 0 50px #f40303d3, 0 0 100px #f40303d3;
+}
+
+section .container .row a span {
+  position: absolute;
+  display: block;
+}
+
+section .container .row #btn1 span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: -webkit-gradient(linear, left top, right top, from(transparent), to(#03e9f4));
+  background: linear-gradient(90deg, transparent, #03e9f4);
+  -webkit-animation: btn-anim1 1s linear infinite;
+          animation: btn-anim1 1s linear infinite;
+}
+
+section .container .row #btn1 span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(#03e9f4));
+  background: linear-gradient(180deg, transparent, #03e9f4);
+  -webkit-animation: btn-anim2 1s linear infinite;
+          animation: btn-anim2 1s linear infinite;
+  -webkit-animation-delay: 0.25s;
+          animation-delay: 0.25s;
+}
+
+section .container .row #btn1 span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: -webkit-gradient(linear, right top, left top, from(transparent), to(#03e9f4));
+  background: linear-gradient(270deg, transparent, #03e9f4);
+  -webkit-animation: btn-anim3 1s linear infinite;
+          animation: btn-anim3 1s linear infinite;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+
+section .container .row #btn1 span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: -webkit-gradient(linear, left bottom, left top, from(transparent), to(#03e9f4));
+  background: linear-gradient(360deg, transparent, #03e9f4);
+  -webkit-animation: btn-anim4 1s linear infinite;
+          animation: btn-anim4 1s linear infinite;
+  -webkit-animation-delay: 0.75s;
+          animation-delay: 0.75s;
+}
+
+section .container .row #btn2 span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: -webkit-gradient(linear, left top, right top, from(transparent), to(#f40303e8));
+  background: linear-gradient(90deg, transparent, #f40303e8);
+  -webkit-animation: btn-anim1 1s linear infinite;
+          animation: btn-anim1 1s linear infinite;
+}
+
+section .container .row #btn2 span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(#f40303e8));
+  background: linear-gradient(180deg, transparent, #f40303e8);
+  -webkit-animation: btn-anim2 1s linear infinite;
+          animation: btn-anim2 1s linear infinite;
+  -webkit-animation-delay: 0.25s;
+          animation-delay: 0.25s;
+}
+
+section .container .row #btn2 span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: -webkit-gradient(linear, right top, left top, from(transparent), to(#f40303e8));
+  background: linear-gradient(270deg, transparent, #f40303e8);
+  -webkit-animation: btn-anim3 1s linear infinite;
+          animation: btn-anim3 1s linear infinite;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+
+section .container .row #btn2 span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: -webkit-gradient(linear, left bottom, left top, from(transparent), to(#f40303e8));
+  background: linear-gradient(360deg, transparent, #f40303e8);
+  -webkit-animation: btn-anim4 1s linear infinite;
+          animation: btn-anim4 1s linear infinite;
+  -webkit-animation-delay: 0.75s;
+          animation-delay: 0.75s;
+}
+
+@-webkit-keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+  50%,
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+  50%,
+  100% {
+    left: 100%;
+  }
+}
+
+@-webkit-keyframes btn-anim2 {
+  0% {
+    top: -100%;
+  }
+  50%,
+  100% {
+    top: 100%;
+  }
+}
+
+@keyframes btn-anim2 {
+  0% {
+    top: -100%;
+  }
+  50%,
+  100% {
+    top: 100%;
+  }
+}
+
+@-webkit-keyframes btn-anim3 {
+  0% {
+    right: -100%;
+  }
+  50%,
+  100% {
+    right: 100%;
+  }
+}
+
+@keyframes btn-anim3 {
+  0% {
+    right: -100%;
+  }
+  50%,
+  100% {
+    right: 100%;
+  }
+}
+
+@-webkit-keyframes btn-anim4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,
+  100% {
+    bottom: 100%;
+  }
+}
+
+@keyframes btn-anim4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,
+  100% {
+    bottom: 100%;
+  }
+}
+
+section .container .row #mainButton.active .modal {
+  -webkit-transform: scale(1, 1);
+  transform: scale(1, 1);
+}
+
+section .container .row #mainButton .modal {
+  top: 0;
+  left: 0;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  background-color: inherit;
+  -webkit-transform-origin: center center;
+  transform-origin: center center;
+  background: #3d0707dc;
+  -webkit-transform: scale(0, 0.00001);
+  transform: scale(0, 0.00001);
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+section .container .row #mainButton2.active .modal2 {
+  -webkit-transform: scale(1, 1);
+  transform: scale(1, 1);
+}
+
+section .container .row #mainButton2 .modal2 {
+  top: 0;
+  left: 0;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  background-color: inherit;
+  -webkit-transform-origin: center center;
+  transform-origin: center center;
+  background: #09809ee1;
+  -webkit-transform: scale(0, 0.00001);
+  transform: scale(0, 0.00001);
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+section .container .row .close-button {
+  top: 20px;
+  right: 20px;
+  font-size: 36px;
+  position: absolute;
+  -webkit-transition: opacity 0.2s ease-in;
+  transition: opacity 0.2s ease-in;
+}
+
+section .container .row .close-button:hover {
+  opacity: 0.9;
+  color: red;
+  cursor: pointer;
+}
+
+section .container .row .form-title {
+  margin-bottom: 15px;
+}
+
+section .container .row .form-button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 50px;
+  max-width: 400px;
+  text-align: center;
+  border: solid 1px white;
+  outline: 1px solid white;
+  outline-offset: 2px;
+  background-color: transparent;
+  -webkit-transition: color 0.2s ease-in, background-color 0.2s ease-in;
+  -webkit-transition: outline-offset 0.2s ease-in, background-color 0.2s ease-in;
+  transition: outline-offset 0.2s ease-in, background-color 0.2s ease-in;
+}
+
+section .container .row .form-button:hover {
+  color: white;
+  cursor: pointer;
+  background-color: transparent;
+  outline-offset: 6px;
+}
+
+section .container .row .input-group {
+  width: 100%;
+  font-size: 16px;
+  max-width: 400px;
+  padding-top: 20px;
+  position: relative;
+  margin-bottom: 15px;
+}
+
+section .container .row .input-group input {
+  width: 100%;
+  color: white;
+  border: none;
+  outline: none;
+  padding: 5px 0;
+  line-height: 1;
+  font-size: 16px;
+  font-family: "Raleway";
+  border-bottom: solid 1px white;
+  background-color: transparent;
+  -webkit-transition: box-shadow 0.2s ease-in;
+  -webkit-transition: -webkit-box-shadow 0.2s ease-in;
+  transition: -webkit-box-shadow 0.2s ease-in;
+  transition: box-shadow 0.2s ease-in;
+  transition: box-shadow 0.2s ease-in, -webkit-box-shadow 0.2s ease-in;
+}
+
+section .container .row .input-group input + label {
+  left: 0;
+  top: 20px;
+  position: absolute;
+  pointer-events: none;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+section .container .row .input-group input:focus {
+  -webkit-box-shadow: 0 1px 0 0 white;
+  box-shadow: 0 1px 0 0 white;
+}
+
+section .container .row .input-group input:focus + label,
+section .container .row .input-group input.active + label {
+  font-size: 12px;
+  -webkit-transform: translateY(-20px);
+  transform: translateY(-20px);
+}
+
+@media screen and (max-width: 1024px) {
+  section .container {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  section header h1 {
+    font-size: 1.1em;
+  }
+  section .container h2 {
+    font-size: 1em;
+    letter-spacing: 0.2em;
+  }
+  section .container h3 {
+    font-size: 0.9em;
+  }
+  section .container p {
+    font-size: 0.8em;
+  }
+  section .container .row {
+    padding: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  section .container .row #mainbutton a {
+    font-size: 14px;
+  }
+}
+/*# sourceMappingURL=registerTeam.css.map */

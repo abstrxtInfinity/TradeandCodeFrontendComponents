@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Team Registration</title>
+    <link rel="stylesheet" href="./registerTeam.css" />
+  </head>
+  <body>
+    <section>
+      <header><h1>Trade and Code</h1></header>
+      <div class="container">
+        <h2>Event Team Registration</h2>
+        <p>
+          Trade and Code is a team event (each team can have maximum 3 members)
+        </p>
+        <h3>What will you do..?</h3>
+
+        <div class="row">
+          <div id="mainButton">
+            <a href="#" id="btn1" class="btn-text" onclick="openForm()">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              Be the leader
+            </a>
+            <div class="modal">
+              <div class="close-button" onclick="closeForm()">x</div>
+              <div class="form-title">Create Team</div>
+              <div class="input-group">
+                <input type="text" id="name" onblur="checkInput(this)" />
+                <label for="name">Team Name</label>
+              </div>
+              <div class="form-button" onclick="closeForm()">Register</div>
+            </div>
+          </div>
+
+          <!-- //!Other Button -->
+
+          <div id="mainButton2">
+            <a href="#" id="btn2" class="btn-text" onclick="openForm2()">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              Join a Team
+            </a>
+            <div class="modal2">
+              <div class="close-button" onclick="closeForm2()">x</div>
+              <div class="form-title">Join Team</div>
+              <div class="input-group">
+                <input type="text" id="name" onblur="checkInput(this)" />
+                <label for="name">Team Code</label>
+              </div>
+              <div class="form-button" onclick="closeForm2()">Join</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="./registerTeam.js"></script>
+  </body>
+</html>
