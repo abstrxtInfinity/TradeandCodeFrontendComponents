@@ -1,4 +1,4 @@
 # Trade and Code
 > Components for Trade and Code event platform
 
-logo.png
+<img src="logo.png" style="align-items:center;justify-content: center; display:flex; width:400px;height:400px"/>
