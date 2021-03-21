@@ -28,3 +28,5 @@ const upload = (pdf) => {
     dropArea.setAttribute("class", "upload valid");
     dropArea.innerText = "Added " + pdf.name;
 };
+
+

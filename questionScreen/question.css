@@ -298,26 +298,58 @@ main {
   border: 1px dashed red;
 }
 
-.bar .btn {
+.button {
+  position: relative;
+  width: 200px;
+  height: 50px;
   display: flex;
-  padding: 10px 60px;
-  width: 100px;
   justify-content: center;
   align-items: center;
-  background-color: transparent;
-  border: 2px solid white;
-  outline: 1px solid #fff;
-  outline-offset: -1px;
-  color: #fff;
-  text-transform: uppercase;
-  font-size: 18px;
   cursor: pointer;
-  transition: outline-offset 0.1s;
-  transition: letter-spacing 0.2s;
+  overflow: hidden;
+  margin: 0 0.8rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), 0 3px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0, 0.22, 0.3, 1);
 }
-.btn:hover {
-  outline-offset: 4px;
-  letter-spacing: 1px;
+.button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.1);
+}
+.button span {
+  color: #fff;
+  font-size: 1rem;
+  z-index: 10;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+._1 {
+  background: grey;
+}
+
+.button .back {
+  position: absolute;
+  width: 0;
+  height: 0;
+  filter: url(#filter);
+  border-radius: 50%;
+  z-index: 5;
+  transition: all 2.5s cubic-bezier(0.1, 0.22, 0.3, 1);
+}
+
+._1 .back {
+  left: -50%;
+  top: -50%;
+  background: #07c6e7;
+}
+.button:hover .back {
+  width: 400px;
+  height: 100px;
 }
 
 @media screen and (max-width: 1024px) {

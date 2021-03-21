@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Team</title>
+    <style>
+      body {
+        background: #2b0606;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+      .modal {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        color: #fff;
+      }
+      .form-title {
+        margin-bottom: 15px;
+      }
+      .form-button {
+        width: 100%;
+        padding: 10px;
+        margin-top: 50px;
+        max-width: 400px;
+        text-align: center;
+        border: solid 1px white;
+        outline: 1px solid white;
+        outline-offset: 2px;
+        background-color: transparent;
+        -webkit-transition: color 0.2s ease-in, background-color 0.2s ease-in;
+        -webkit-transition: outline-offset 0.2s ease-in,
+          background-color 0.2s ease-in;
+        transition: outline-offset 0.2s ease-in, background-color 0.2s ease-in;
+      }
+      .form-button:hover {
+        color: white;
+        cursor: pointer;
+        background-color: transparent;
+        outline-offset: 6px;
+      }
+      .input-group {
+        width: 100%;
+        font-size: 16px;
+        max-width: 400px;
+        padding-top: 20px;
+        position: relative;
+        margin-bottom: 15px;
+      }
+      .input-group input {
+        width: 100%;
+        color: white;
+        border: none;
+        outline: none;
+        padding: 8px 0;
+        line-height: 1;
+        font-size: 16px;
+        font-family: "Raleway";
+        border-bottom: solid 1px white;
+        background-color: transparent;
+        -webkit-transition: box-shadow 0.2s ease-in;
+        -webkit-transition: -webkit-box-shadow 0.2s ease-in;
+        transition: -webkit-box-shadow 0.2s ease-in;
+        transition: box-shadow 0.2s ease-in;
+        transition: box-shadow 0.2s ease-in, -webkit-box-shadow 0.2s ease-in;
+      }
+      .input-group input + label {
+        left: 0;
+        top: 20px;
+        font-size: 16px;
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px);
+        position: absolute;
+        pointer-events: none;
+        -webkit-transition: all 0.2s ease-in;
+        transition: all 0.2s ease-in;
+      }
+      .input-group input:focus {
+        -webkit-box-shadow: 0 1px 0 0 white;
+        box-shadow: 0 1px 0 0 white;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div class="modal">
+        <div class="form-title">Create Team</div>
+        <div class="input-group">
+          <input type="text" id="name" onblur="checkInput(this)" />
+          <label for="name">Team Name</label>
+        </div>
+        <div class="form-button">Register</div>
+      </div>
+    </section>
+  </body>
+</html>
