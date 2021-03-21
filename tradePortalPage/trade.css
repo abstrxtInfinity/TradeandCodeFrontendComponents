@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+body {
+  background: #000;
+  overflow: hidden;
+}
+
+section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  position: relative;
+}
+section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("./bh.gif") no-repeat;
+  background-position: center;
+  background-size: 50%;
+  filter: blur(5px);
+}
+
+.container {
+  margin: 5%;
+  width: 90%;
+  height: 90%;
+  justify-content: center;
+  display: flex;
+  position: relative;
+}
+.container h1 {
+  color: #fff;
+  font-size: 2.5em;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
