@@ -5,9 +5,574 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Solving..</title>
-    <link rel="stylesheet" href="./question.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+
+      *,
+      *:before,
+      *:after {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        outline: none;
+      }
+
+      html {
+        font-family: Arial;
+        font-size: 16px;
+        background: #01011d;
+      }
+
+      body {
+        position: relative;
+        margin: 0;
+        padding: 0;
+        font-weight: 300;
+        line-height: 1.75;
+        color: #444;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .menu {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        width: 50px;
+        height: 50px;
+        background-color: rgb(12, 206, 206);
+        border-radius: 50%;
+        -webkit-transition: -webkit-transform 250ms ease;
+        transition: -webkit-transform 250ms ease;
+        transition: transform 250ms ease;
+        transition: transform 250ms ease, -webkit-transform 250ms ease;
+        cursor: pointer;
+        z-index: 200;
+      }
+
+      .menu span {
+        position: relative;
+        display: block;
+        width: 50%;
+        height: 2px;
+        background-color: #000;
+        float: left;
+        -webkit-transform-origin: center center;
+        transform-origin: center center;
+        -webkit-transition: -webkit-transform 250ms ease;
+        transition: -webkit-transform 250ms ease;
+        transition: transform 250ms ease;
+        transition: transform 250ms ease, -webkit-transform 250ms ease;
+        z-index: 200;
+      }
+
+      .menu span:nth-of-type(1) {
+        -webkit-transform: translateY(-5px);
+        transform: translateY(-5px);
+      }
+
+      .menu span:nth-of-type(3) {
+        -webkit-transform: translateY(5px);
+        transform: translateY(5px);
+      }
+
+      #menu {
+        display: none;
+      }
+
+      #menu:checked ~ .menu {
+        background-color: transparent;
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+        -webkit-transition: -webkit-transform 250ms ease;
+        transition: -webkit-transform 250ms ease;
+        transition: transform 250ms ease;
+        transition: transform 250ms ease, -webkit-transform 250ms ease;
+      }
+
+      #menu:checked ~ .menu span {
+        background-color: rgb(224, 9, 9);
+        -webkit-transition: -webkit-transform 250ms ease;
+        transition: -webkit-transform 250ms ease;
+        transition: transform 250ms ease;
+        transition: transform 250ms ease, -webkit-transform 250ms ease;
+      }
+
+      #menu:checked ~ .menu span:nth-of-type(1) {
+        -webkit-transform: translateY(1px) rotate(45deg);
+        transform: translateY(1px) rotate(45deg);
+      }
+
+      #menu:checked ~ .menu span:nth-of-type(2) {
+        display: none;
+      }
+
+      #menu:checked ~ .menu span:nth-of-type(3) {
+        -webkit-transform: translateY(-1px) rotate(-45deg);
+        transform: translateY(-1px) rotate(-45deg);
+      }
+
+      #menu:checked ~ .nav {
+        left: 0px;
+        -webkit-transition: left 500ms ease;
+        transition: left 500ms ease;
+      }
+
+      #menu:checked ~ section {
+        -webkit-transform: translateX(250px);
+        transform: translateX(250px);
+        -webkit-transition: -webkit-transform 500ms ease;
+        transition: -webkit-transform 500ms ease;
+        transition: transform 500ms ease;
+        transition: transform 500ms ease, -webkit-transform 500ms ease;
+      }
+
+      .nav {
+        position: fixed;
+        top: 0;
+        left: -310px;
+        width: 300px;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        background-color: #040425;
+        font-size: 0.8em;
+        -webkit-transition: left 500ms ease;
+        transition: left 500ms ease;
+        z-index: 0;
+      }
+
+      .nav ul {
+        position: relative;
+        list-style-type: none;
+        margin: 150px 0;
+        padding: 0;
+      }
+
+      .nav ul li {
+        position: relative;
+        display: block;
+        position: relative;
+        margin: 2em 0;
+      }
+
+      .nav ul li a {
+        position: relative;
+        display: block;
+        margin: 0;
+        padding: 15px 20px;
+        color: white;
+        line-height: 4em;
+        text-transform: uppercase;
+        text-decoration: none;
+        letter-spacing: 0.4em;
+        color: rgba(255, 255, 255, 0.35);
+      }
+
+      .nav ul li.active a {
+        color: white;
+      }
+
+      .nav ul li:not(.active)::after {
+        opacity: 0.2;
+      }
+
+      .nav ul li:not(.active):hover a {
+        color: rgba(255, 255, 255, 0.75);
+      }
+
+      .nav ul li::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 0.2em;
+        background: black;
+        left: 0;
+        bottom: 0;
+        background-image: -webkit-gradient(
+          linear,
+          left top,
+          right top,
+          from(#5e42a6),
+          to(#b74e91)
+        );
+        background-image: linear-gradient(to right, #5e42a6, #b74e91);
+      }
+
+      section {
+        transition: ease-in-out 0.5s;
+        width: 80%;
+        margin: 0 auto;
+      }
+
+      main {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-height: 10%;
+        padding: 60px 60px;
+        z-index: 0;
+      }
+
+      ::-webkit-scrollbar {
+        width: 0;
+      }
+
+      .question {
+        width: 80%;
+        margin: 0 auto;
+        padding: 30px;
+        font-size: 1.5em;
+        color: #fff;
+        overflow-y: scroll;
+        border: 1px solid #fff;
+        border-radius: 10px;
+      }
+
+      .bar {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 80%;
+        margin: 0 auto;
+        margin-top: 50px;
+      }
+
+      .bar .upload {
+        color: grey;
+        border: 1px dashed grey;
+        padding: 6.5px 60px;
+        width: 75%;
+        justify-content: center;
+        align-items: center;
+        font-size: 18px;
+        text-transform: uppercase;
+        display: flex;
+        flex-direction: row;
+        margin-right: 10px;
+      }
+
+      /* .bar .onHover {
+        color: #fff;
+        border: 1px dotted #fff;
+      }
+
+      .bar .valid {
+        color: cyan;
+        border: 1px solid cyan;
+      }
+
+      .bar .invalid {
+        color: red;
+        border: 1px dashed red;
+      } */
+
+      .form {
+        width: 500px;
+      }
+
+      @media (max-width: 600px) {
+        .form {
+          width: 80%;
+        }
+      }
+
+      @media screen and (max-width: 1024px) {
+        ::-webkit-scrollbar {
+          width: 0;
+        }
+
+        body {
+          overflow-y: visible;
+        }
+
+        section main {
+          margin: 0;
+          padding: 0;
+          max-height: 700px;
+          overflow-y: scroll;
+        }
+
+        section main .question {
+          padding-top: 10px;
+          overflow-y: scroll;
+          font-size: 1.25em;
+          margin-top: 40px;
+        }
+
+        section main .bar {
+          display: flex;
+          flex-direction: column;
+        }
+
+        section main .bar .upload {
+          border-radius: 10px;
+          width: 100%;
+          margin-bottom: 30px;
+        }
+      }
+
+      .input-file-container {
+        position: relative;
+        width: 250px;
+      }
+
+      .js .input-file-trigger {
+        display: block;
+        padding: 14px 45px;
+        border: 1px solid #00c7ec;
+        color: #00c7ec;
+        font-size: 1em;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        transition: all 0.4s;
+        cursor: pointer;
+        transition: all 0.2s ease-in;
+      }
+
+      .js .input-file {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 250px;
+        opacity: 0;
+        padding: 14px 0;
+        cursor: pointer;
+        border-radius: 20px;
+      }
+
+      .js .input-file:hover + .input-file-trigger,
+      .js .input-file:focus + .input-file-trigger,
+      .js .input-file-trigger:hover,
+      .js .input-file-trigger:focus {
+        color: white;
+        box-shadow: 0 0 20px 0 rgba(0, 199, 236, 0.5);
+        background-color: #00c8ecb2;
+        -webkit-transition: all 0.2s ease-out;
+        -moz-transition: all 0.2s ease-out;
+        transition: all 0.2s ease-out;
+        border-radius: 40px;
+      }
+
+      .file-return {
+        margin: 0;
+      }
+
+      .file-return:not(:empty) {
+        margin: 1em 0;
+      }
+
+      .js .file-return {
+        font-style: italic;
+        font-size: 0.9em;
+        font-weight: bold;
+      }
+
+      .js .file-return:not(:empty):before {
+        content: "Selected file: ";
+        font-style: normal;
+        font-weight: normal;
+      }
+
+      h1,
+      h2 {
+        margin-bottom: 5px;
+        font-weight: normal;
+        text-align: center;
+        color: #aaa;
+      }
+
+      h2 {
+        margin: 5px 0 2em;
+        color: #1abc9c;
+      }
+
+      form {
+        width: 225px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      h2 + P {
+        text-align: center;
+      }
+
+      .txtcenter {
+        margin-top: 4em;
+        font-size: 0.9em;
+        text-align: center;
+        color: #aaa;
+      }
+
+      .copy {
+        margin-top: 2em;
+      }
+
+      .copy a {
+        text-decoration: none;
+        color: #1abc9c;
+      }
+
+      .button1 {
+        border-radius: 10px;
+        border: 0;
+        position: relative;
+        width: 200px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        overflow: hidden;
+        margin: 0 0.8rem;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), 0 3px 8px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s cubic-bezier(0, 0.22, 0.3, 1);
+      }
+
+      .button1::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.1);
+      }
+
+      .button1 span {
+        color: #fff;
+        font-size: 1rem;
+        z-index: 10;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+
+      ._1 {
+        background: grey;
+      }
+
+      .button1 .back {
+        position: absolute;
+        width: 0;
+        height: 0;
+        filter: url(#filter);
+        border-radius: 50%;
+        z-index: 5;
+        transition: all 2.5s cubic-bezier(0.1, 0.22, 0.3, 1);
+      }
+
+      ._1 .back {
+        left: -50%;
+        top: -50%;
+        background: #07c6e7;
+      }
+
+      .button1:hover .back {
+        width: 400px;
+        height: 100px;
+      }
+
+      /** BACKGROUND **/
+      .circle {
+        position: fixed;
+        border-radius: 50%;
+        background: rgb(35, 68, 99);
+        animation: ripple 15s infinite;
+        box-shadow: 0px 0px 1px 0px #508fb9;
+      }
+
+      .small {
+        width: 200px;
+        height: 200px;
+        right: -100px;
+        bottom: -100px;
+      }
+
+      .medium {
+        width: 400px;
+        height: 400px;
+        right: -200px;
+        bottom: -200px;
+      }
+
+      .large {
+        width: 600px;
+        height: 600px;
+        right: -300px;
+        bottom: -300px;
+      }
+
+      .xlarge {
+        width: 800px;
+        height: 800px;
+        right: -400px;
+        bottom: -400px;
+      }
+
+      .xxlarge {
+        width: 1000px;
+        height: 1000px;
+        right: -500px;
+        bottom: -500px;
+      }
+
+      .shade1 {
+        opacity: 0.2;
+      }
+      .shade2 {
+        opacity: 0.5;
+      }
+
+      .shade3 {
+        opacity: 0.7;
+      }
+
+      .shade4 {
+        opacity: 0.8;
+      }
+
+      .shade5 {
+        opacity: 0.9;
+      }
+
+      @keyframes ripple {
+        0% {
+          transform: scale(0.8);
+        }
+
+        50% {
+          transform: scale(1.2);
+        }
+
+        100% {
+          transform: scale(0.8);
+        }
+      }
+    </style>
   </head>
-  <body>
+  <body style="overflow-y: scroll">
+    <div class="ripple-background">
+      <div class="circle xxlarge shade1"></div>
+      <div class="circle xlarge shade2"></div>
+      <div class="circle large shade3"></div>
+      <div class="circle mediun shade4"></div>
+      <div class="circle small shade5"></div>
+    </div>
+
     <input type="checkbox" id="menu" />
     <label for="menu" class="menu">
       <span></span>
@@ -23,12 +588,10 @@
       </ul>
     </nav>
     <section>
-      <div class="color"></div>
-      <div class="color"></div>
-      <div class="color"></div>
       <main>
         <div class="question">
-          <h3>Question 1.</h3>
+          <h3>Round {{ round.number }}</h3>
+          <h6 style="text-align: center">Problem Statement</h6>
           <p>
             Lorem ipsum elit. Alias doloribus accusamus vero quas nulla
             veritatis blanditiis inventore debitis. Veniam suscipit magni rerum
@@ -37,65 +600,73 @@
             saepe molestiae magnam deleniti repellendus placeat vero. Vel quis
             omnis nobis.
           </p>
+          <h6>Test - Input</h6>
+          <p>10 20 30 40 50 60</p>
+          <h6>Sample - Output</h6>
+          <p>10 20 30 40 50 60</p>
         </div>
         <div class="bar">
-          <div class="upload">
-            Upload your answer here
-            <div class="svg">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                x="0px"
-                y="0px"
-                width="30"
-                height="30"
-                viewBox="0 0 172 172"
-                style="fill: #000000"
-              >
-                <g
-                  fill="none"
-                  fill-rule="nonzero"
-                  stroke="none"
-                  stroke-width="1"
-                  stroke-linecap="butt"
-                  stroke-linejoin="miter"
-                  stroke-miterlimit="10"
-                  stroke-dasharray=""
-                  stroke-dashoffset="0"
-                  font-family="none"
-                  font-weight="none"
-                  font-size="none"
-                  text-anchor="none"
-                  style="mix-blend-mode: normal"
-                >
-                  <path d="M0,172v-172h172v172z" fill="none"></path>
-                  <g fill="#ffffff">
-                    <path
-                      d="M83.17812,28.08438l-26.875,26.875c-1.6125,1.6125 -1.6125,4.16562 0,5.64375c1.6125,1.6125 4.16562,1.6125 5.64375,0l20.02188,-20.02188v79.0125c0,2.28437 1.74688,4.03125 4.03125,4.03125c2.28437,0 4.03125,-1.74688 4.03125,-4.03125v-79.0125l20.02188,20.02188c0.80625,0.80625 1.88125,1.20938 2.82187,1.20938c0.94062,0 2.01563,-0.40312 2.82187,-1.20938c1.6125,-1.6125 1.6125,-4.16562 0,-5.64375l-26.875,-26.875c-1.6125,-1.6125 -4.03125,-1.6125 -5.64375,0zM131.95625,152.91875c0,-2.28437 -1.74688,-4.03125 -4.03125,-4.03125h-83.85c-2.28437,0 -4.03125,1.74688 -4.03125,4.03125c0,2.28438 1.74688,4.03125 4.03125,4.03125h83.85c2.28438,0 4.03125,-1.88125 4.03125,-4.03125z"
-                    ></path>
-                  </g>
-                </g>
-              </svg>
-            </div>
-          </div>
-          <svg width="0" height="0">
-            <filter id="filter">
-              <feTurbulence
-                type="fractalNoise"
-                baseFrequency=".01"
-                numOctaves="6"
+          <form method="post">
+            {% csrf_token %}
+            <p class="file-return"></p>
+            <div class="input-file-container">
+              <input
+                class="input-file"
+                id="my-file"
+                type="file"
+                accept=".cpp,.c"
               />
-              <feDisplacementMap in="SourceGraphic" scale="100" />
-            </filter>
-          </svg>
-          <div class="button _1">
-            <span>Submit</span>
-            <div class="back"></div>
-          </div>
+              <label tabindex="0" for="my-file" class="input-file-trigger"
+                >Select a file...</label
+              >
+
+              <svg width="0" height="0">
+                <filter id="filter">
+                  <feTurbulence
+                    type="fractalNoise"
+                    baseFrequency=".01"
+                    numOctaves="6"
+                  ></feTurbulence>
+                  <feDisplacementMap
+                    in="SourceGraphic"
+                    scale="100"
+                  ></feDisplacementMap>
+                </filter>
+              </svg>
+              <button class="button1 _1" type="submit">
+                <span>Submit</span>
+                <div class="back"></div>
+              </button>
+            </div>
+          </form>
         </div>
       </main>
     </section>
+    <script>
+      function submitForm(event) {
+        document.querySelector("form").submit();
+      }
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src="./drop.js"></script>
+      document.querySelector("html").classList.add("js");
+
+      var fileInput = document.querySelector(".input-file"),
+        button = document.querySelector(".input-file-trigger"),
+        the_return = document.querySelector(".file-return");
+
+      button.addEventListener("keydown", function (event) {
+        if (event.keyCode == 13 || event.keyCode == 32) {
+          fileInput.focus();
+        }
+      });
+      button.addEventListener("click", function (event) {
+        fileInput.focus();
+        return false;
+      });
+      fileInput.addEventListener("change", function (event) {
+        the_return.innerHTML = this.value.split(`\\`)[
+          this.value.split(`\\`).length - 1
+        ];
+      });
+    </script>
   </body>
 </html>
