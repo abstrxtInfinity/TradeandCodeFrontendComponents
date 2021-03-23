@@ -148,7 +148,7 @@ hr {
   cursor: pointer;
 }
 .btn:hover {
-  background: transparent;
+  background: #000;
   border: 1px solid #fff;
 }
 
