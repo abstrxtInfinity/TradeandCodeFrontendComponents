@@ -129,3 +129,6 @@ button:hover {
   -moz-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
 }
+button:focus {
+  outline: 0;
+}
