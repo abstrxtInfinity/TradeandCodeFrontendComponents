@@ -1,4 +1,9 @@
 # Trade and Code
-> Components for Trade and Code event platform
-----------------------------------------------
-<img src="logo.png">
+
+## Components for Trade and Code event platform
+
+---
+
+![LOGO](logo.png "Trade and Code Logo")
+
+---

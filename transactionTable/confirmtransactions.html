@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transactions</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "lato", sans-serif;
+        background: rgb(14, 16, 44);
+        overflow-y: scroll;
+        overflow-x: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      ::-webkit-scrollbar {
+        width: 0px;
+      }
+
+      .container {
+        position: absolute;
+        width: 60%;
+        transform: translateY(20%);
+        padding: 50px;
+        border: 1px solid rgb(27, 75, 75);
+        box-shadow: 10px 10px 10px #000;
+        display: flex;
+        flex-direction: column;
+      }
+
+      h2 {
+        font-size: 2.5em;
+        text-transform: uppercase;
+        font-weight: 400;
+        letter-spacing: 0.2em;
+        margin: 20px 0;
+        text-align: center;
+        color: #fff;
+      }
+
+      .responsive-table li {
+        border-radius: 3px;
+        padding: 25px 30px;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 25px;
+        font-size: 18px;
+      }
+      .responsive-table .table-header {
+        background-color: #0aa6b1;
+        font-size: 18px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+      }
+      .responsive-table .table-row {
+        background-color: #8b8b8b;
+        box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
+      }
+      .responsive-table .col-1 {
+        flex-basis: 10%;
+      }
+      .responsive-table .col-2 {
+        flex-basis: 40%;
+      }
+      .responsive-table .col-3 {
+        flex-basis: 25%;
+      }
+      .responsive-table .col-4 {
+        flex-basis: 25%;
+      }
+      .btn {
+        position: absolute;
+        width: 100px;
+        padding: 10px 20px;
+        background: transparent;
+        border: 2px solid #fff;
+        font-size: 22px;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: #fff;
+        border-radius: 50px;
+        bottom: 20px;
+        right: 20px;
+      }
+      .btn:hover {
+        color: white;
+        box-shadow: 0 0 20px 0 rgba(0, 199, 236, 0.5);
+        background-color: #00c8ecb2;
+        -webkit-transition: all 0.2s ease-out;
+        -moz-transition: all 0.2s ease-out;
+        transition: all 0.2s ease-out;
+        border-radius: 40px;
+      }
+      @media all and (max-width: 767px) {
+        .responsive-table .table-header {
+          display: none;
+        }
+        .responsive-table li {
+          display: block;
+        }
+        .responsive-table .col {
+          flex-basis: 100%;
+        }
+        .responsive-table .col {
+          display: flex;
+          padding: 10px 0;
+        }
+        .responsive-table .col:before {
+          color: #ffffff;
+          padding-right: 10px;
+          font-size: 20px;
+          text-transform: uppercase;
+          content: attr(data-label);
+          flex-basis: 50%;
+          text-align: right;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Confirm Transactions</h2>
+      <ul class="responsive-table">
+        <li class="table-header">
+          <div class="col col-1">S no.</div>
+          <div class="col col-2">Component</div>
+          <div class="col col-3">Qty.</div>
+          <div class="col col-4">T Amt.</div>
+        </li>
+        <li class="table-row">
+          <div class="col col-1" data-label="S no.">1</div>
+          <div class="col col-2" data-label="Message">if else</div>
+          <div class="col col-3" data-label="Mode">5</div>
+          <div class="col col-4" data-label="Current Balance">5000</div>
+        </li>
+        <li class="table-row">
+          <div class="col col-1" data-label="S no.">1</div>
+          <div class="col col-2" data-label="Message">if else</div>
+          <div class="col col-3" data-label="Mode">5</div>
+          <div class="col col-4" data-label="Current Balance">5000</div>
+        </li>
+        <li class="table-row">
+          <div class="col col-1" data-label="S no.">1</div>
+          <div class="col col-2" data-label="Message">if else</div>
+          <div class="col col-3" data-label="Mode">5</div>
+          <div class="col col-4" data-label="Current Balance">5000</div>
+        </li>
+        <li class="table-row">
+          <div class="col col-1" data-label="S no.">1</div>
+          <div class="col col-2" data-label="Message">if else</div>
+          <div class="col col-3" data-label="Mode">5</div>
+          <div class="col col-4" data-label="Current Balance">5000</div>
+        </li>
+      </ul>
+      <button class="btn">Buy</button>
+    </div>
+  </body>
+</html>
