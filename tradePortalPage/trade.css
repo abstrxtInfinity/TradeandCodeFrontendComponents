@@ -17,26 +17,16 @@ section {
   display: flex;
   position: relative;
 }
-section::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url("./bh.gif") no-repeat;
-  background-position: center;
-  background-size: 50%;
-  filter: blur(5px);
-}
 
 .container {
   margin: 5%;
   width: 90%;
   height: 90%;
-  justify-content: center;
   display: flex;
   position: relative;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
 }
 .container h1 {
   color: #fff;
@@ -44,4 +34,98 @@ section::before {
   font-weight: 400;
   letter-spacing: 0.3em;
   text-transform: uppercase;
+  margin: 30px 0;
+}
+form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+@import url("https://rsms.me/inter/inter.css");
+:root {
+  --color-background: var(--color-light);
+  --color-text: var(--color-dark);
+  --color-accent: var(--color-signal);
+  --size-bezel: 0.5rem;
+  --size-radius: 4px;
+  line-height: 1.4;
+  font-family: "Inter", sans-serif;
+  font-size: calc(0.6rem + 0.4vw);
+}
+
+form h2 {
+  font-weight: 400;
+}
+
+.card {
+  width: 600px;
+  background: #000;
+  padding: calc(4 * var(--size-bezel));
+  margin-top: calc(4 * var(--size-bezel));
+  border-radius: var(--size-radius);
+  border: 1px solid var(--color-shadow, cyan);
+  box-shadow: 0.5rem 0.5rem 0 var(--color-shadow, rgba(40, 196, 196, 0.651));
+}
+
+.input {
+  position: relative;
+}
+.input__label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: calc(var(--size-bezel) * 0.75) calc(var(--size-bezel) * 0.5);
+  margin: calc(var(--size-bezel) * 0.75 + 3px) calc(var(--size-bezel) * 0.5);
+  white-space: nowrap;
+  transform: translate(0, 0);
+  transform-origin: 0 0;
+  background: #000;
+  transition: transform 120ms ease-in;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+.input__field {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  border: 2px solid currentColor;
+  padding: calc(var(--size-bezel) * 1.5) var(--size-bezel);
+  color: #fff;
+  background: transparent;
+  border-radius: var(--size-radius);
+}
+.input__field:not(:-moz-placeholder-shown) + .input__label {
+  transform: translate(0.25rem, -65%) scale(0.8);
+  color: cyan;
+}
+.input__field:not(:-ms-input-placeholder) + .input__label {
+  transform: translate(0.25rem, -65%) scale(0.8);
+  color: cyan;
+}
+.input__field:focus + .input__label,
+.input__field:not(:placeholder-shown) + .input__label {
+  transform: translate(0.25rem, -65%) scale(0.8);
+  color: cyan;
+}
+
+.button-group {
+  margin-top: 30px;
+}
+
+button {
+  color: #fff;
+  padding: 8px 12px;
+  background: rgb(87, 86, 86);
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+button:hover {
+  box-shadow: 0 0 20px 0 rgba(0, 199, 236, 0.5);
+  background-color: #00c8ecb2;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
 }
