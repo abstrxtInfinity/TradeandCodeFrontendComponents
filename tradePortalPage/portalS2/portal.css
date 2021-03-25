@@ -17,7 +17,12 @@ form .question input[type="text"] {
 html {
   background-color: rgb(17, 51, 51);
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  overflow: scroll;
+}
+::-webkit-scrollbar {
+  width: 0;
 }
 
 form {
@@ -47,7 +52,7 @@ form h1 {
   text-transform: uppercase;
 }
 form button {
-  margin-top: 35px;
+  margin-top: 20px;
   background-color: transparent;
   border: 1px solid cyan;
   line-height: 0;
@@ -138,4 +143,40 @@ form .question input:valid ~ label {
   -ms-transform: translate(5px, -35px) scale(0.6);
   -webkit-transform: translate(5px, -35px) scale(0.6);
   transform: translate(5px, -35px) scale(0.6);
+}
+
+p {
+  font-size: 14px;
+  text-align: center;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: red;
+}
+
+.logo {
+  top: 20px;
+  left: 50px;
+  position: absolute;
+  border-radius: 50%;
+  box-shadow: 0px 0px 20px #000;
+}
+.logo img {
+  width: 200px;
+  height: 200px;
+}
+
+@media screen and (max-width: 1024px) {
+  .logo img {
+    width: 150px;
+    height: 150px;
+  }
+}
+@media screen and (max-width: 768px) {
+  form {
+    min-width: 400px;
+  }
+  .logo {
+    left: 40%;
+  }
 }
