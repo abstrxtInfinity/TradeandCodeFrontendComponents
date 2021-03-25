@@ -92,6 +92,8 @@ h2 {
   }
   .responsive-table li {
     display: block;
+    border: 0;
+    border-radius: 10px;
   }
   .responsive-table .col {
     flex-basis: 100%;
