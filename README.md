@@ -4,6 +4,6 @@
 
 ---
 
-![LOGO](logo.png "Trade and Code Logo")
+![LOGO](transparentLogo.png "Trade and Code Logo")
 
 ---
