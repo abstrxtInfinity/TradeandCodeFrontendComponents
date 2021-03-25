@@ -1,0 +1,112 @@
+body {
+  font-family: monospace;
+  background: rgb(10, 58, 58);
+}
+
+.container {
+  max-width: 1000px;
+  margin-top: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+h2 {
+  font-size: 2.5em;
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  margin: 20px 0;
+  text-align: center;
+  color: #fff;
+}
+
+.responsive-table li {
+  border-radius: 100px;
+  border: 1px solid #fff;
+  padding: 25px 30px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #fff;
+}
+.responsive-table .table-header {
+  background-color: rgba(0, 255, 255, 0.822);
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  animation: blink 4s infinite;
+  animation-delay: 1s;
+}
+@keyframes blink {
+  0% {
+    background-color: transparent;
+  }
+  50% {
+    background-color: rgba(0, 255, 255, 0.822);
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+.responsive-table .table-row {
+  background-color: #00000049;
+  box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
+}
+.responsive-table .col-1 {
+  flex-basis: 10%;
+}
+.responsive-table .col-2 {
+  flex-basis: 40%;
+}
+.responsive-table .col-3 {
+  flex-basis: 25%;
+}
+.responsive-table .col-4 {
+  flex-basis: 25%;
+}
+
+.btn {
+  font-family: arial;
+  font-weight: bold;
+  color: #ffffff !important;
+  font-size: 20px;
+  border-radius: 50px;
+  padding: 5px 10px;
+  border: 0;
+  background: transparent;
+  transition: all 0.3s;
+  outline: none;
+  cursor: pointer;
+}
+.btn:hover {
+  background: #00e5ed93;
+}
+
+@media all and (max-width: 767px) {
+  .responsive-table .table-header {
+    display: none;
+  }
+  .responsive-table li {
+    display: block;
+  }
+  .responsive-table .col {
+    flex-basis: 100%;
+  }
+  .responsive-table .col {
+    display: flex;
+    padding: 10px 0;
+  }
+  .responsive-table .col:before {
+    color: #ffffff;
+    padding-right: 10px;
+    font-size: 20px;
+    text-transform: uppercase;
+    content: attr(data-label);
+    flex-basis: 50%;
+    text-align: right;
+  }
+}
