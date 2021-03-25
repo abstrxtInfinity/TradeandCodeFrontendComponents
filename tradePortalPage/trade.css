@@ -80,6 +80,8 @@ form h2 {
   transform: translate(0, 0);
   transform-origin: 0 0;
   background: #000;
+  color: rgb(180, 180, 180);
+
   transition: transform 120ms ease-in;
   text-transform: uppercase;
   line-height: 1.2;
@@ -90,7 +92,7 @@ form h2 {
   width: 100%;
   border: 2px solid currentColor;
   padding: calc(var(--size-bezel) * 1.5) var(--size-bezel);
-  color: #fff;
+  color: rgb(70, 70, 70);
   background: transparent;
   border-radius: var(--size-radius);
 }
@@ -108,7 +110,7 @@ form h2 {
   color: cyan;
 }
 
-.button-group {
+.card .button-group {
   margin-top: 30px;
 }
 
