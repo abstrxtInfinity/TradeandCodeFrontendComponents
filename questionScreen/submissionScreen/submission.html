@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Submission</title>
+    <link rel="stylesheet" href="./submission.css" />
+  </head>
+  <body>
+    <section>
+      <header><h1>Submission</h1></header>
+      <div class="container">
+        <div class="row1">
+          <div class="card">
+            <form class="form1">
+              <p class="title">
+                {{ component.component.componentName }}<br /><br /><span
+                  >Qty Present- {{ component.quantity }}</span
+                >
+              </p>
+              <div class="question">
+                <input
+                  type="number"
+                  required
+                  value="0"
+                  min="0"
+                  max="{{ component.quantity }}"
+                  name="{{ component.component.id }}"
+                />
+                <label>Enter Quantity</label>
+              </div>
+              <p></p>
+              <div class="circle"></div>
+            </form>
+          </div>
+          <div class="card">
+            <form class="form1">
+              <p class="title">
+                {{ component.component.componentName }}<br /><br /><span
+                  >Qty Present- {{ component.quantity }}</span
+                >
+              </p>
+              <div class="question">
+                <input
+                  type="number"
+                  required
+                  value="0"
+                  min="0"
+                  max="{{ component.quantity }}"
+                  name="{{ component.component.id }}"
+                />
+                <label>Enter Quantity</label>
+              </div>
+              <p></p>
+              <div class="circle"></div>
+            </form>
+          </div>
+          <div class="card">
+            <form class="form1">
+              <p class="title">
+                {{ component.component.componentName }}<br /><br /><span
+                  >Qty Present- {{ component.quantity }}</span
+                >
+              </p>
+              <div class="question">
+                <input
+                  type="number"
+                  required
+                  value="0"
+                  min="0"
+                  max="{{ component.quantity }}"
+                  name="{{ component.component.id }}"
+                />
+                <label>Enter Quantity</label>
+              </div>
+              <p></p>
+              <div class="circle"></div>
+            </form>
+          </div>
+          <div class="card">
+            <form class="form1">
+              <p class="title">
+                {{ component.component.componentName }}<br /><br /><span
+                  >Qty Present- {{ component.quantity }}</span
+                >
+              </p>
+              <div class="question">
+                <input
+                  type="number"
+                  required
+                  value="0"
+                  min="0"
+                  max="{{ component.quantity }}"
+                  name="{{ component.component.id }}"
+                />
+                <label>Enter Quantity</label>
+              </div>
+              <p></p>
+              <div class="circle"></div>
+            </form>
+          </div>
+          
+    </div>
+        <div class="row2">
+          <div class="button-group">
+            <form action="post" class="form2">
+                 <p class="file-return"></p>
+            <div class="input-file-container">
+              <input
+                class="input-file"
+                id="my-file"
+                type="file"
+                accept=".cpp,.c"
+              />
+              <label tabindex="0" for="my-file" class="input-file-trigger"
+                >Select a file...</label
+              >
+            </form>
+            <div class="btn"><button>Submit</button></div>
+          </div>
+        </div>
+      
+      </div>
+    </section>
+    <script>
+      function submitForm(event) {
+        document.querySelector("form").submit();
+      }
+
+      document.querySelector("html").classList.add("js");
+
+      var fileInput = document.querySelector(".input-file"),
+        button = document.querySelector(".input-file-trigger"),
+        the_return = document.querySelector(".file-return");
+
+      button.addEventListener("keydown", function (event) {
+        if (event.keyCode == 13 || event.keyCode == 32) {
+          fileInput.focus();
+        }
+      });
+      button.addEventListener("click", function (event) {
+        fileInput.focus();
+        return false;
+      });
+      fileInput.addEventListener("change", function (event) {
+        the_return.innerHTML = this.value.split(`\\`)[
+          this.value.split(`\\`).length - 1
+        ];
+      });
+    </script>
+  </body>
+</html>
