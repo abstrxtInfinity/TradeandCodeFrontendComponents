@@ -10,7 +10,7 @@
 html {
   font-family: Arial;
   font-size: 16px;
-  background: #01011d;
+  background: rgb(21, 73, 73);
 }
 
 body {
@@ -19,7 +19,6 @@ body {
   padding: 0;
   font-weight: 300;
   line-height: 1.75;
-  color: #444;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -44,7 +43,7 @@ body {
   flex-direction: column;
   width: 50px;
   height: 50px;
-  background-color: rgb(12, 206, 206);
+  background-color: rgb(47, 170, 170);
   border-radius: 50%;
   -webkit-transition: -webkit-transform 250ms ease;
   transition: -webkit-transform 250ms ease;
@@ -139,7 +138,7 @@ body {
   height: 100vh;
   margin: 0;
   padding: 0;
-  background-color: #040425;
+  background-color: #1c7a73;
   font-size: 0.8em;
   -webkit-transition: left 500ms ease;
   transition: left 500ms ease;
@@ -197,161 +196,72 @@ body {
     linear,
     left top,
     right top,
-    from(#5e42a6),
-    to(#b74e91)
+    from(#01d5f1),
+    to(#057ca0)
   );
-  background-image: linear-gradient(to right, #5e42a6, #b74e91);
+  background-image: linear-gradient(to right, from(#01d5f1), to(#057ca0));
 }
 
 section {
   transition: ease-in-out 0.5s;
   width: 80%;
   margin: 0 auto;
-  margin-top: 40px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 main {
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 80%;
   max-height: 10%;
   padding: 80px 60px;
   z-index: 0;
+  margin: 0 auto;
+  margin-top: 40px;
+  box-shadow: inset 5px 5px 5px #0000006b, inset -5px -5px 15px #00eeff7f,
+    5px 5px 5px #0000006b, -5px -5px 15px #00eeff7f;
+  border-radius: 10px;
 }
 ::-webkit-scrollbar {
   width: 0;
 }
 .question {
-  width: 80%;
-  margin-top: 40px;
-  margin: 0 auto;
-  padding: 30px;
   font-size: 1.5em;
   color: #fff;
   overflow-y: scroll;
-  border: 1px solid #fff;
-  border-radius: 10px;
 }
-.color {
+.btn-container {
+  width: 60%;
   position: absolute;
-  filter: blur(150px);
-  width: 200px;
-  height: 200px;
-}
-.color:nth-child(1) {
-  top: -100px;
-  right: -100px;
-  width: 300px;
-  height: 200px;
-  background: #5e42a6;
-}
-
-.color:nth-child(2) {
-  bottom: -300px;
-  right: -60px;
-  width: 300px;
-  height: 300px;
-  background: #5e42a6;
-}
-
-.color:nth-child(3) {
-  bottom: -400px;
-  left: 60px;
-  width: 200px;
-  height: 200px;
-  background: #5e42a6;
-}
-.bar {
+  bottom: 10px;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  width: 80%;
+  justify-content: flex-end;
   margin: 0 auto;
-  margin-top: 50px;
+  padding: 0 30px;
 }
-.bar .upload {
-  color: grey;
-  border: 1px dashed grey;
-  padding: 6.5px 60px;
-  width: 75%;
-  justify-content: center;
-  align-items: center;
-  font-size: 18px;
-  text-transform: uppercase;
-  display: flex;
-  flex-direction: row;
-  margin-right: 10px;
-}
-
-.bar .onHover {
-  color: #fff;
-  border: 1px dotted #fff;
-}
-.bar .valid {
-  color: cyan;
-  border: 1px solid cyan;
-}
-.bar .invalid {
-  color: red;
-  border: 1px dashed red;
-}
-
-.button {
-  position: relative;
-  width: 200px;
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  overflow: hidden;
-  margin: 0 0.8rem;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), 0 3px 8px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s cubic-bezier(0, 0.22, 0.3, 1);
-}
-.button::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.1);
-}
-.button span {
-  color: #fff;
-  font-size: 1rem;
-  z-index: 10;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-._1 {
-  background: grey;
-}
-
-.button .back {
-  position: absolute;
-  width: 0;
-  height: 0;
-  filter: url(#filter);
-  border-radius: 50%;
-  z-index: 5;
-  transition: all 2.5s cubic-bezier(0.1, 0.22, 0.3, 1);
-}
-
-._1 .back {
-  left: -50%;
-  top: -50%;
-  background: #07c6e7;
-}
-.button:hover .back {
+.btn {
   width: 400px;
-  height: 100px;
+  height: 5ch;
+  margin-bottom: 20px;
+  font-size: 1.2em;
+  cursor: pointer;
+  background: transparent;
+  outline: none;
+  border: none;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: 0.5s;
 }
-
+.btn:hover {
+  box-shadow: inset 5px 5px 5px #0000006b, inset -5px -5px 5px #00eeff7f,
+    5px 5px 5px #0000006b, -5px -5px 5px #00eeff7f;
+}
 @media screen and (max-width: 1024px) {
   ::-webkit-scrollbar {
     width: 0;
@@ -371,14 +281,5 @@ main {
     overflow-y: scroll;
     font-size: 1.25em;
     margin-top: 40px;
-  }
-  section main .bar {
-    display: flex;
-    flex-direction: column;
-  }
-  section main .bar .upload {
-    border-radius: 10px;
-    width: 100%;
-    margin-bottom: 30px;
   }
 }

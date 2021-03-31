@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Round</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+
+      *,
+      *:before,
+      *:after {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        outline: none;
+      }
+      html {
+        font-family: Arial;
+        font-size: 16px;
+        background: rgb(21, 73, 73);
+      }
+
+      body {
+        position: relative;
+        margin: 0;
+        padding: 0;
+        font-weight: 300;
+        line-height: 1.75;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .menu {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        width: 50px;
+        height: 50px;
+        background-color: rgb(47, 170, 170);
+        border-radius: 50%;
+        -webkit-transition: -webkit-transform 250ms ease;
+        transition: -webkit-transform 250ms ease;
+        transition: transform 250ms ease;
+        transition: transform 250ms ease, -webkit-transform 250ms ease;
+        cursor: pointer;
+        z-index: 200;
+      }
+
+      .menu span {
+        position: relative;
+        display: block;
+        width: 50%;
+        height: 2px;
+        background-color: #000;
+        float: left;
+        -webkit-transform-origin: center center;
+        transform-origin: center center;
+        -webkit-transition: -webkit-transform 250ms ease;
+        transition: -webkit-transform 250ms ease;
+        transition: transform 250ms ease;
+        transition: transform 250ms ease, -webkit-transform 250ms ease;
+        z-index: 200;
+      }
+
+      .menu span:nth-of-type(1) {
+        -webkit-transform: translateY(-5px);
+        transform: translateY(-5px);
+      }
+
+      .menu span:nth-of-type(3) {
+        -webkit-transform: translateY(5px);
+        transform: translateY(5px);
+      }
+
+      #menu {
+        display: none;
+      }
+
+      #menu:checked ~ .menu {
+        background-color: transparent;
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+        -webkit-transition: -webkit-transform 250ms ease;
+        transition: -webkit-transform 250ms ease;
+        transition: transform 250ms ease;
+        transition: transform 250ms ease, -webkit-transform 250ms ease;
+      }
+
+      #menu:checked ~ .menu span {
+        background-color: rgb(224, 9, 9);
+        -webkit-transition: -webkit-transform 250ms ease;
+        transition: -webkit-transform 250ms ease;
+        transition: transform 250ms ease;
+        transition: transform 250ms ease, -webkit-transform 250ms ease;
+      }
+
+      #menu:checked ~ .menu span:nth-of-type(1) {
+        -webkit-transform: translateY(1px) rotate(45deg);
+        transform: translateY(1px) rotate(45deg);
+      }
+
+      #menu:checked ~ .menu span:nth-of-type(2) {
+        display: none;
+      }
+
+      #menu:checked ~ .menu span:nth-of-type(3) {
+        -webkit-transform: translateY(-1px) rotate(-45deg);
+        transform: translateY(-1px) rotate(-45deg);
+      }
+
+      #menu:checked ~ .nav {
+        left: 0px;
+        -webkit-transition: left 500ms ease;
+        transition: left 500ms ease;
+      }
+
+      #menu:checked ~ section {
+        -webkit-transform: translateX(250px);
+        transform: translateX(250px);
+        -webkit-transition: -webkit-transform 500ms ease;
+        transition: -webkit-transform 500ms ease;
+        transition: transform 500ms ease;
+        transition: transform 500ms ease, -webkit-transform 500ms ease;
+      }
+
+      .nav {
+        position: fixed;
+        top: 0;
+        left: -310px;
+        width: 300px;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        background-color: #1c7a73;
+        font-size: 0.8em;
+        -webkit-transition: left 500ms ease;
+        transition: left 500ms ease;
+        z-index: 0;
+      }
+
+      .nav ul {
+        position: relative;
+        list-style-type: none;
+        margin: 150px 0;
+        padding: 0;
+      }
+
+      .nav ul li {
+        position: relative;
+        display: block;
+        position: relative;
+        margin: 2em 0;
+      }
+
+      .nav ul li a {
+        position: relative;
+        display: block;
+        margin: 0;
+        padding: 15px 20px;
+        color: white;
+        line-height: 4em;
+        text-transform: uppercase;
+        text-decoration: none;
+        letter-spacing: 0.4em;
+        color: rgba(255, 255, 255, 0.35);
+      }
+
+      .nav ul li.active a {
+        color: white;
+      }
+
+      .nav ul li:not(.active)::after {
+        opacity: 0.2;
+      }
+
+      .nav ul li:not(.active):hover a {
+        color: rgba(255, 255, 255, 0.75);
+      }
+
+      .nav ul li::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 0.2em;
+        background: black;
+        left: 0;
+        bottom: 0;
+        background-image: -webkit-gradient(
+          linear,
+          left top,
+          right top,
+          from(#01d5f1),
+          to(#057ca0)
+        );
+        background-image: linear-gradient(to right, from(#01d5f1), to(#057ca0));
+      }
+
+      section {
+        transition: ease-in-out 0.5s;
+        width: 80%;
+        margin: 0 auto;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      main {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        max-height: 10%;
+        padding: 80px 60px;
+        z-index: 0;
+        margin: 0 auto;
+        margin-top: 40px;
+        box-shadow: inset 5px 5px 5px #0000006b, inset -5px -5px 15px #00eeff7f,
+          5px 5px 5px #0000006b, -5px -5px 15px #00eeff7f;
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar {
+        width: 0;
+      }
+      .question {
+        font-size: 1.5em;
+        color: #fff;
+        overflow-y: scroll;
+      }
+      .btn-container {
+        width: 60%;
+        position: absolute;
+        bottom: 10px;
+        display: flex;
+        justify-content: flex-end;
+        margin: 0 auto;
+        padding: 0 30px;
+      }
+      .btn {
+        width: 400px;
+        height: 5ch;
+        margin-bottom: 20px;
+        font-size: 1.2em;
+        cursor: pointer;
+        background: transparent;
+        outline: none;
+        border: none;
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        transition: 0.5s;
+      }
+      .btn:hover {
+        box-shadow: inset 5px 5px 5px #0000006b, inset -5px -5px 5px #00eeff7f,
+          5px 5px 5px #0000006b, -5px -5px 5px #00eeff7f;
+      }
+      @media screen and (max-width: 1024px) {
+        ::-webkit-scrollbar {
+          width: 0;
+        }
+
+        body {
+          overflow-y: visible;
+        }
+        section main {
+          margin: 0;
+          padding: 0;
+          max-height: 700px;
+          overflow-y: scroll;
+        }
+        section main .question {
+          padding-top: 10px;
+          overflow-y: scroll;
+          font-size: 1.25em;
+          margin-top: 40px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <input type="checkbox" id="menu" />
+    <label for="menu" class="menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+    <nav class="nav">
+      <ul>
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">Market</a></li>
+        <li><a href="#">Trade portal</a></li>
+        <li><a href="#">Transactions</a></li>
+      </ul>
+    </nav>
+    <section>
+      <main>
+        <div class="question">
+          <h3>Round {{ round.number }}</h3>
+          <h6 style="text-align: center">Problem Statement</h6>
+          <p>
+            Lorem ipsum elit. Alias doloribus accusamus vero quas nulla
+            veritatis blanditiis inventore debitis. Veniam suscipit magni rerum
+            officiis aspernatur corporis consequatur, odio sunt ea incidunt
+            dolorum aliquam laborum laudantium omnis autem tempore eius quasi
+            saepe molestiae magnam deleniti repellendus placeat vero. Vel quis
+            omnis nobis.
+          </p>
+          <h6>Test - Input</h6>
+          <p>10 20 30 40 50 60</p>
+          <h6>Sample - Output</h6>
+          <p>10 20 30 40 50 60</p>
+        </div>
+      </main>
+      <div class="btn-container">
+        <button class="btn">< Proceed to Submission ></button>
+      </div>
+    </section>
+  </body>
+</html>
