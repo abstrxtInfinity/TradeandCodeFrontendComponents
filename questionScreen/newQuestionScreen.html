@@ -27,7 +27,8 @@
         padding: 0;
         font-weight: 300;
         line-height: 1.75;
-        overflow: hidden;
+        overflow-y: scroll;
+        overflow-x: hidden;
         display: flex;
         flex-direction: column;
       }
@@ -231,6 +232,7 @@
         z-index: 0;
         margin: 0 auto;
         margin-top: 40px;
+        margin-bottom: 20px;
         box-shadow: inset 5px 5px 5px #0000006b, inset -5px -5px 15px #00eeff7f,
           5px 5px 5px #0000006b, -5px -5px 15px #00eeff7f;
         border-radius: 10px;
@@ -242,19 +244,20 @@
         font-size: 1.5em;
         color: #fff;
         overflow-y: scroll;
+        border-radius: 10px;
+        padding: 30px;
       }
       .btn-container {
-        width: 60%;
+        width: 90%;
         position: absolute;
         bottom: 10px;
         display: flex;
         justify-content: flex-end;
         margin: 0 auto;
-        padding: 0 30px;
+        padding: 10 30px;
       }
       .btn {
-        width: 400px;
-        height: 5ch;
+        padding: 15px;
         margin-bottom: 20px;
         font-size: 1.2em;
         cursor: pointer;
@@ -264,12 +267,14 @@
         color: #fff;
         text-transform: uppercase;
         letter-spacing: 0.1em;
+        border-radius: 10px;
         transition: 0.5s;
       }
+
       .btn:hover {
-        box-shadow: inset 5px 5px 5px #0000006b, inset -5px -5px 5px #00eeff7f,
-          5px 5px 5px #0000006b, -5px -5px 5px #00eeff7f;
+        background: #00e5ed93;
       }
+
       @media screen and (max-width: 1024px) {
         ::-webkit-scrollbar {
           width: 0;
@@ -321,15 +326,24 @@
             saepe molestiae magnam deleniti repellendus placeat vero. Vel quis
             omnis nobis.
           </p>
-          <h6>Test - Input</h6>
-          <p>10 20 30 40 50 60</p>
-          <h6>Sample - Output</h6>
-          <p>10 20 30 40 50 60</p>
+          <div
+            class="highlight"
+            style="
+              padding: 5px 0;
+              padding-left: 50px;
+              background: rgba(0, 0, 0, 0.253);
+            "
+          >
+            <h6>Test - Input</h6>
+            <p>10 20 30 40 50 60</p>
+            <h6>Sample - Output</h6>
+            <p>10 20 30 40 50 60</p>
+          </div>
+        </div>
+        <div class="btn-container">
+          <button class="btn">< Proceed for Submission ></button>
         </div>
       </main>
-      <div class="btn-container">
-        <button class="btn">< Proceed to Submission ></button>
-      </div>
     </section>
   </body>
 </html>
